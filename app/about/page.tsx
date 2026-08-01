@@ -20,11 +20,11 @@ const skillCategories = [
     skills: ["JavaScript", "TypeScript", "Python", "C++", "C", "Java", "SQL"],
   },
   {
-    label: "Frontend",
+    label: "Frontend Stack",
     skills: ["React", "Next.js", "Tailwind CSS", "HTML5", "CSS3", "Radix UI"],
   },
   {
-    label: "Backend",
+    label: "Backend Stack",
     skills: ["Node.js", "Express.js", "FastAPI", "REST APIs", "WebSockets", "Socket.IO"],
   },
   {
@@ -47,28 +47,28 @@ export default function AboutPage() {
     <div className="min-h-screen flex flex-col bg-[#0b0c0e] text-[#f8fafc] bg-grid-pattern">
       <Navbar />
 
-      <main className="flex-1 max-w-5xl w-full mx-auto px-4 sm:px-6 py-8 sm:py-12">
+      <main className="flex-1 max-w-7xl w-full mx-auto px-4 sm:px-8 lg:px-12 py-8 sm:py-12">
         {/* Page Heading */}
         <motion.div
           initial={{ opacity: 0, y: 12 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.3 }}
-          className="mb-8 sm:mb-10"
+          className="mb-8 sm:mb-12"
         >
           <span className="category-tag">About Me</span>
-          <h1 className="text-2xl sm:text-4xl font-bold tracking-tight text-white mt-1 mb-2">
+          <h1 className="text-3xl sm:text-5xl font-bold tracking-tight text-white mt-1 mb-3">
             Computer Science & AI Student.
           </h1>
-          <p className="text-slate-300 text-sm sm:text-base max-w-2xl leading-relaxed">
-            Building software applications, telemetry tools, and infrastructure.
+          <p className="text-slate-300 text-base sm:text-lg max-w-3xl leading-relaxed">
+            Building software applications, network telemetry tools, and cloud infrastructure.
           </p>
         </motion.div>
 
-        {/* 2-Column Grid: Bio & Image */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start mb-12">
-          {/* Bio Column */}
+        {/* 2-Column Full Widescreen Grid: Bio & Image */}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 sm:gap-12 items-start mb-16">
+          {/* Bio Column (7 cols) */}
           <motion.div
-            className="lg:col-span-7 space-y-4 text-slate-300 text-sm sm:text-base leading-relaxed"
+            className="lg:col-span-7 space-y-5 text-slate-300 text-base sm:text-lg leading-relaxed"
             initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.4, delay: 0.1 }}
@@ -82,7 +82,7 @@ export default function AboutPage() {
                 href="https://noteboat.store"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-white font-medium underline underline-offset-4 hover:text-slate-300"
+                className="text-white font-semibold underline underline-offset-4 hover:text-slate-300"
               >
                 Noteboat
               </a>
@@ -96,52 +96,52 @@ export default function AboutPage() {
             </p>
 
             {/* Education Box */}
-            <div className="glass-card p-5 mt-6">
-              <div className="flex items-center gap-2 mb-2 text-xs font-mono uppercase tracking-wider text-slate-400 font-bold">
-                <BookOpen size={15} /> Education
+            <div className="glass-card p-6 mt-8">
+              <div className="flex items-center gap-2 mb-3 text-xs font-mono uppercase tracking-wider text-slate-400 font-bold">
+                <BookOpen size={16} /> Education Background
               </div>
-              <div className="flex justify-between items-start flex-wrap gap-2">
+              <div className="flex justify-between items-start flex-wrap gap-3">
                 <div>
-                  <h3 className="text-white font-bold text-sm sm:text-base">KIET Group of Institutions</h3>
-                  <p className="text-xs text-slate-300 mt-0.5">B.Tech in CS & Engineering (Artificial Intelligence)</p>
+                  <h3 className="text-white font-bold text-base sm:text-xl">KIET Group of Institutions</h3>
+                  <p className="text-xs sm:text-sm text-slate-300 mt-1">B.Tech in CS & Engineering (Artificial Intelligence)</p>
                 </div>
-                <span className="text-xs font-mono text-slate-300 bg-[#1f2228] px-2.5 py-0.5 rounded-full border border-[#2c3038]">
+                <span className="text-xs font-mono text-slate-300 bg-[#1f2228] px-3 py-1 rounded-full border border-[#2c3038]">
                   2024 – 2028
                 </span>
               </div>
             </div>
           </motion.div>
 
-          {/* Sidebar: Photo Card & Focus Tags */}
+          {/* Sidebar: Photo Card & Focus Tags (5 cols) */}
           <motion.div
-            className="lg:col-span-5 space-y-5"
+            className="lg:col-span-5 space-y-6"
             initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.4, delay: 0.2 }}
           >
             {/* Photo Card */}
-            <div className="glass-card p-3 max-w-sm mx-auto lg:max-w-none">
-              <div className="relative w-full aspect-[4/5] rounded-lg overflow-hidden border border-[#22252a] bg-[#0b0c0e]">
+            <div className="glass-card p-4">
+              <div className="relative w-full aspect-[4/5] max-h-[500px] rounded-xl overflow-hidden border border-[#22252a] bg-[#0b0c0e]">
                 <Image
                   src="/profile.jpg"
                   alt="Tushar Bhardwaj at Nxtra by Airtel"
                   fill
-                  sizes="(max-width: 1024px) 100vw, 380px"
+                  sizes="(max-width: 1024px) 100vw, 500px"
                   className="object-cover object-top"
                   priority
                 />
               </div>
-              <div className="pt-2.5 pb-1 text-center">
+              <div className="pt-3 pb-1 text-center">
                 <p className="text-xs font-mono text-slate-400">Project Intern @ Airtel Center (Gurugram)</p>
               </div>
             </div>
 
             {/* Core Focus Tags */}
-            <div className="glass-card p-4">
-              <div className="flex items-center gap-2 mb-2.5 text-xs font-mono uppercase tracking-wider text-slate-400 font-bold">
-                <Cpu size={14} /> Core Areas
+            <div className="glass-card p-5">
+              <div className="flex items-center gap-2 mb-3 text-xs font-mono uppercase tracking-wider text-slate-400 font-bold">
+                <Cpu size={15} /> Core Technical Focus
               </div>
-              <div className="flex flex-wrap gap-1.5">
+              <div className="flex flex-wrap gap-2">
                 {focusChips.map((chip) => (
                   <span key={chip} className="tech-pill">
                     {chip}
@@ -153,31 +153,31 @@ export default function AboutPage() {
         </div>
 
         {/* Technical Stack */}
-        <div className="pt-8 border-t border-[#22252a]">
-          <div className="mb-6">
-            <span className="category-tag">Technical Skills</span>
-            <h2 className="text-xl sm:text-2xl font-bold tracking-tight text-white mt-0.5">
-              Tools & Languages
+        <div className="pt-10 border-t border-[#22252a]">
+          <div className="mb-8">
+            <span className="category-tag">Technical Competencies</span>
+            <h2 className="text-2xl sm:text-3xl font-bold tracking-tight text-white mt-1">
+              Production Skills & Stack
             </h2>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {skillCategories.map((cat) => (
               <div
                 key={cat.label}
-                className="glass-card p-4 sm:p-5"
+                className="glass-card p-6"
               >
-                <div className="flex items-center justify-between mb-3">
+                <div className="flex items-center justify-between mb-4">
                   <h3 className="text-xs font-mono uppercase tracking-wider font-bold text-slate-200">
                     {cat.label}
                   </h3>
                   {cat.highlight && (
-                    <span className="text-[10px] font-mono uppercase px-2 py-0.5 rounded-full bg-white/10 text-slate-200 border border-white/10">
+                    <span className="text-[10px] font-mono uppercase px-2.5 py-0.5 rounded-full bg-white/10 text-slate-200 border border-white/10">
                       Telemetry
                     </span>
                   )}
                 </div>
-                <div className="flex flex-wrap gap-1.5">
+                <div className="flex flex-wrap gap-2">
                   {cat.skills.map((skill) => (
                     <span key={skill} className="tech-pill">
                       {skill}
@@ -189,13 +189,13 @@ export default function AboutPage() {
           </div>
 
           {/* AWS Cert */}
-          <div className="mt-6 glass-card p-4 sm:p-5 border-[#22252a] flex items-center gap-3.5">
-            <div className="w-10 h-10 rounded-lg bg-white/5 border border-white/10 flex items-center justify-center text-slate-300 shrink-0">
-              <ShieldCheck size={22} />
+          <div className="mt-8 glass-card p-6 border-[#22252a] flex items-center gap-4">
+            <div className="w-12 h-12 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center text-slate-300 shrink-0">
+              <ShieldCheck size={26} />
             </div>
             <div>
-              <h4 className="text-white font-bold text-sm sm:text-base">AWS Certified Cloud Practitioner</h4>
-              <p className="text-xs text-slate-400 font-mono mt-0.5">Amazon Web Services · Verified Credential</p>
+              <h4 className="text-white font-bold text-base sm:text-lg">AWS Certified Cloud Practitioner</h4>
+              <p className="text-xs sm:text-sm text-slate-400 font-mono mt-0.5">Amazon Web Services · Verified Credential</p>
             </div>
           </div>
         </div>

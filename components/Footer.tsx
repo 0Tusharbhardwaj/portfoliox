@@ -2,10 +2,10 @@
 
 export default function Footer() {
   return (
-    <footer className="border-t border-[#22252a] py-8 mt-12 bg-[#0b0c0e]">
-      <div className="max-w-5xl mx-auto px-4 sm:px-6 flex flex-col sm:flex-row items-center justify-between gap-4">
+    <footer className="border-t border-[#22252a] py-8 mt-16 bg-[#0b0c0e]">
+      <div className="max-w-7xl mx-auto px-4 sm:px-8 lg:px-12 flex flex-col sm:flex-row items-center justify-between gap-4">
         <div className="flex items-center gap-2">
-          <span className="text-xs text-slate-400">
+          <span className="text-xs sm:text-sm text-slate-400">
             © {new Date().getFullYear()} Tushar Bhardwaj. All rights reserved.
           </span>
         </div>
