@@ -4,37 +4,36 @@ import { motion } from "framer-motion";
 import { ArrowRight, MapPin, Building2, Code2, Cpu, FileText, ChevronRight } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-
-const metrics = [
-  { number: "30,000+", label: "Unique Visitors", sub: "UPTAC Predictor in 30 days" },
-  { number: "12,000+", label: "Active Students", sub: "Noteboat Platform across 50+ colleges" },
-  { number: "1,200+", label: "GitHub Contributions", sub: "Maintained active open source history" },
-];
+import PreFooter from "@/components/PreFooter";
+import Counter from "@/components/Counter";
 
 const highlights = [
   {
     icon: <Building2 className="w-6 h-6 text-slate-300" />,
     title: "AKTU Nexus (Noteboat)",
-    desc: "Academic document exchange platform serving 12,000+ active students across 50+ colleges with 2,000+ live concurrent visitors.",
+    desc: "Academic document exchange platform serving students across 50+ AKTU-affiliated colleges with 2,000+ live concurrent visitors.",
     href: "/projects",
-    tag: "Flagship Project",
-    metric: "12,000+ Active Users",
+    tag: "Flagship Platform",
+    metric: "1,000+ Registered Users · 30k+ Visitors",
+    tech: ["Next.js 16", "TypeScript", "Node.js", "MongoDB", "Socket.IO"],
   },
   {
     icon: <Cpu className="w-6 h-6 text-slate-300" />,
     title: "Airtel Telemetry Collector",
-    desc: "Network telemetry collector built during Airtel internship using FastAPI, Prometheus, Grafana, and gNMI streaming engines.",
+    desc: "Architected gNMI streaming telemetry engine and multi-VRF BGP routing data collectors with 15s Prometheus alerting rules.",
     href: "/experience",
     tag: "Enterprise Internship",
-    metric: "15s Alert Rules",
+    metric: "15s Real-Time Alerts",
+    tech: ["FastAPI", "Prometheus", "Grafana", "gNMI", "BGP", "Neo4j"],
   },
   {
     icon: <Code2 className="w-6 h-6 text-slate-300" />,
     title: "UPTAC Counselling Predictor",
-    desc: "College admission predictor platform that processed 16,000+ requests for 30,000+ unique users in its first month.",
+    desc: "College admission predictor platform that processed 16,000+ requests for 30,000+ unique users in its first month of launch.",
     href: "/projects",
     tag: "Production Tool",
-    metric: "30,000+ Visitors",
+    metric: "30,000+ Total Visitors",
+    tech: ["Next.js", "Node.js", "MongoDB", "Express", "Recharts"],
   },
 ];
 
@@ -55,22 +54,29 @@ export default function Home() {
           <span>Founder @ Noteboat · Ex-Intern @ Airtel Center</span>
         </motion.div>
 
-        {/* Hero Title & Bio */}
+        {/* Hero Title & Refined Sub-headline */}
         <motion.h1
           initial={{ opacity: 0, y: 12 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.4, delay: 0.1 }}
-          className="text-3xl sm:text-5xl lg:text-6xl font-bold tracking-tight leading-tight mb-6 text-white max-w-4xl"
+          className="text-3xl sm:text-5xl lg:text-6xl font-bold tracking-tight leading-tight mb-4 text-white max-w-4xl"
         >
           Hi, I&apos;m Tushar Bhardwaj.
-          <br />
-          <span className="text-slate-300">Software, Network & AI Systems Engineer.</span>
         </motion.h1>
+
+        <motion.p
+          initial={{ opacity: 0, y: 12 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.4, delay: 0.15 }}
+          className="text-xl sm:text-2xl lg:text-3xl font-semibold text-slate-300 mb-6 max-w-3xl leading-snug"
+        >
+          Software & Systems Engineer. Building scalable platforms and network intelligence.
+        </motion.p>
 
         <motion.div
           initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.4, delay: 0.15 }}
+          transition={{ duration: 0.4, delay: 0.2 }}
           className="flex items-center gap-2 text-slate-400 text-xs sm:text-sm font-mono mb-6"
         >
           <MapPin size={14} className="text-slate-400" />
@@ -80,38 +86,44 @@ export default function Home() {
         <motion.p
           initial={{ opacity: 0, y: 12 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.4, delay: 0.2 }}
+          transition={{ duration: 0.4, delay: 0.25 }}
           className="text-slate-300 text-base sm:text-lg leading-relaxed max-w-3xl mb-10"
         >
           I&apos;m a Computer Science student building scalable enterprise software and web platforms.
-          I founded Noteboat (12,000+ students), interned at Airtel Center building telemetry collectors, and write production code in TypeScript, Python, and Next.js.
+          I founded Noteboat (1,000+ registered users), interned at Airtel Center building telemetry collectors, and write production code in TypeScript, Python, and Next.js.
         </motion.p>
 
         {/* CTA Buttons */}
         <motion.div
           initial={{ opacity: 0, y: 12 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.4, delay: 0.25 }}
+          transition={{ duration: 0.4, delay: 0.3 }}
           className="flex flex-wrap gap-4 items-center mb-16"
         >
-          <Link href="/projects" className="btn-solid">
-            View Projects <ArrowRight size={15} />
+          <Link
+            href="/projects"
+            className="btn-solid focus-visible:ring-2 focus-visible:ring-slate-400 focus-visible:outline-none group"
+          >
+            View Projects <ArrowRight size={15} className="group-hover:translate-x-1 transition-transform" />
           </Link>
-          <Link href="/about" className="btn-outline">
+          <Link
+            href="/about"
+            className="btn-outline focus-visible:ring-2 focus-visible:ring-slate-400 focus-visible:outline-none"
+          >
             About Me
           </Link>
           <a
             href="/resume.pdf"
             target="_blank"
             rel="noopener noreferrer"
-            className="btn-outline"
+            className="btn-outline focus-visible:ring-2 focus-visible:ring-slate-400 focus-visible:outline-none"
           >
             <FileText size={15} className="text-slate-300" />
             Download Resume
           </a>
         </motion.div>
 
-        {/* Metrics Banner */}
+        {/* Dynamic Animated Metrics Banner */}
         <motion.div
           initial={{ opacity: 0, y: 16 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -120,15 +132,29 @@ export default function Home() {
           className="mb-16 p-8 rounded-2xl glass-card border border-[#22252a]"
         >
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 divide-y md:divide-y-0 md:divide-x divide-[#22252a]">
-            {metrics.map((m, idx) => (
-              <div key={idx} className={`${idx !== 0 ? "pt-6 md:pt-0 md:pl-8" : ""}`}>
-                <div className="text-3xl sm:text-4xl font-bold font-mono text-white tracking-tight">
-                  {m.number}
-                </div>
-                <div className="text-sm font-semibold text-slate-200 mt-1">{m.label}</div>
-                <div className="text-xs text-slate-400 mt-0.5">{m.sub}</div>
+            <div className="pt-0">
+              <div className="text-3xl sm:text-4xl font-bold text-white tracking-tight">
+                <Counter value={1000} suffix="+" />
               </div>
-            ))}
+              <div className="text-sm font-semibold text-slate-200 mt-1">Registered Users</div>
+              <div className="text-xs text-slate-400 mt-0.5">Noteboat Platform · Growing Daily</div>
+            </div>
+
+            <div className="pt-6 md:pt-0 md:pl-8">
+              <div className="text-3xl sm:text-4xl font-bold text-white tracking-tight">
+                <Counter value={30000} suffix="+" />
+              </div>
+              <div className="text-sm font-semibold text-slate-200 mt-1">Total Visitors</div>
+              <div className="text-xs text-slate-400 mt-0.5">UPTAC & Noteboat Applications</div>
+            </div>
+
+            <div className="pt-6 md:pt-0 md:pl-8">
+              <div className="text-3xl sm:text-4xl font-bold text-white tracking-tight">
+                <Counter value={1200} suffix="+" />
+              </div>
+              <div className="text-sm font-semibold text-slate-200 mt-1">GitHub Contributions</div>
+              <div className="text-xs text-slate-400 mt-0.5">Maintained active open source history</div>
+            </div>
           </div>
         </motion.div>
 
@@ -141,8 +167,11 @@ export default function Home() {
                 Core Projects & Experience
               </h2>
             </div>
-            <Link href="/projects" className="text-xs font-mono text-slate-400 hover:text-white hover:underline flex items-center gap-1">
-              All Projects <ChevronRight size={13} />
+            <Link
+              href="/projects"
+              className="text-xs font-mono text-slate-400 hover:text-white hover:underline flex items-center gap-1 group focus-visible:ring-2 focus-visible:ring-slate-400 focus-visible:outline-none"
+            >
+              All Projects <ChevronRight size={13} className="group-hover:translate-x-1 transition-transform" />
             </Link>
           </div>
 
@@ -154,7 +183,7 @@ export default function Home() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.3, delay: i * 0.08 }}
-                className="glass-card p-6 flex flex-col justify-between group"
+                className="glass-card p-6 flex flex-col justify-between group hover:-translate-y-1 hover:shadow-lg hover:shadow-black/50 transition-all duration-300"
               >
                 <div>
                   <div className="flex items-center justify-between mb-4">
@@ -177,18 +206,30 @@ export default function Home() {
                   </p>
                 </div>
 
-                <Link
-                  href={item.href}
-                  className="inline-flex items-center gap-1.5 text-xs font-mono text-slate-300 hover:text-white"
-                >
-                  Read details <ArrowRight size={13} />
-                </Link>
+                <div>
+                  {/* Tech Stack Pills */}
+                  <div className="flex flex-wrap gap-1.5 pt-4 mb-4 border-t border-[#22252a]">
+                    {item.tech.map((t) => (
+                      <span key={t} className="tech-pill text-[10px]">
+                        {t}
+                      </span>
+                    ))}
+                  </div>
+
+                  <Link
+                    href={item.href}
+                    className="inline-flex items-center gap-1.5 text-xs font-mono text-slate-300 hover:text-white group-hover:translate-x-1 transition-transform"
+                  >
+                    Read details <ArrowRight size={13} />
+                  </Link>
+                </div>
               </motion.div>
             ))}
           </div>
         </div>
       </main>
 
+      <PreFooter />
       <Footer />
     </div>
   );

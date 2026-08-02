@@ -1,8 +1,9 @@
 "use client";
 import { motion } from "framer-motion";
-import { ExternalLink, Star, Smartphone, Cloud, Server, Sparkles, CheckCircle2 } from "lucide-react";
+import { ExternalLink, Star, CheckCircle2, ArrowRight } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import PreFooter from "@/components/PreFooter";
 
 interface Project {
   name: string;
@@ -20,11 +21,11 @@ interface Project {
 const flagshipProject: Project = {
   name: "AKTU Nexus (Noteboat)",
   description:
-    "High-performance academic portal engineered for 12,000+ active students across 50+ AKTU-affiliated colleges. Supporting 2,000+ concurrent live visitors, the platform solves file sharing bottlenecks and delivers real-time notifications.",
+    "High-performance academic portal engineered for engineering students across 50+ AKTU-affiliated colleges. Supporting 2,000+ concurrent live visitors, the platform solves file sharing bottlenecks and delivers real-time notifications.",
   tech: ["Next.js 16", "TypeScript", "Node.js", "Express", "MongoDB Atlas", "Socket.IO", "Tailwind CSS", "Vercel"],
   github: "https://github.com/0Tusharbhardwaj",
   live: "https://noteboat.store",
-  metric: "12,000+ Active Students · 2,000+ Concurrent Visitors",
+  metric: "1,000+ Registered Users · 30,000+ Total Visitors · Growing Daily",
   flagship: true,
   status: "Production Live",
   bullets: [
@@ -43,7 +44,7 @@ const otherProjects: Project[] = [
     tech: ["Next.js", "Node.js", "Express", "MongoDB", "Recharts"],
     github: "https://github.com/0Tusharbhardwaj",
     live: "https://uptac-pro.vercel.app",
-    metric: "30,000+ Unique Visitors in 30 Days",
+    metric: "30,000+ Total Visitors in 30 Days",
     tag: "SaaS Platform",
     bullets: [
       "Migrated data from static JSON to MongoDB, increasing search and filtering performance for 2,000+ students by 50%.",
@@ -53,12 +54,12 @@ const otherProjects: Project[] = [
   {
     name: "AI Network Intelligence & Telemetry Platform",
     description:
-      "Enterprise platform built during Airtel internship for automated network discovery, telemetry collection, and AI-assisted infrastructure troubleshooting.",
+      "Enterprise platform architected during Airtel internship for automated network discovery, telemetry collection, and AI-assisted infrastructure troubleshooting.",
     tech: ["Python", "FastAPI", "Neo4j", "SQLite", "SNMP", "gNMI", "React", "TypeScript", "Groq API"],
     github: "https://github.com/0Tusharbhardwaj",
     tag: "Enterprise AI & Infra",
     bullets: [
-      "Constructed multi-VRF BGP collector service and gNMI streaming engine.",
+      "Architected multi-VRF BGP collector service and gNMI streaming telemetry engine.",
       "Configured 15-second Prometheus alert rules and real-time Telegram incident alerting.",
       "Utilized Neo4j graph database for topological network mapping and LLM querying via Groq API.",
     ],
@@ -91,10 +92,10 @@ const otherProjects: Project[] = [
 
 export default function ProjectsPage() {
   return (
-    <div className="min-h-screen flex flex-col bg-[#09090b] text-[#f4f4f5] bg-grid-pattern">
+    <div className="min-h-screen flex flex-col bg-[#0b0c0e] text-[#f8fafc] bg-grid-pattern">
       <Navbar />
 
-      <main className="flex-1 max-w-6xl w-full mx-auto px-6 py-12">
+      <main className="flex-1 max-w-7xl w-full mx-auto px-4 sm:px-8 lg:px-12 py-8 sm:py-12">
         <motion.div
           initial={{ opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}
@@ -102,10 +103,10 @@ export default function ProjectsPage() {
           className="mb-12"
         >
           <span className="category-tag">Selected Work</span>
-          <h1 className="text-3xl sm:text-5xl font-extrabold tracking-tight text-white mt-1 mb-3">
+          <h1 className="text-3xl sm:text-5xl font-bold tracking-tight text-white mt-1 mb-3">
             Featured Engineering Projects
           </h1>
-          <p className="text-zinc-400 text-base sm:text-lg max-w-2xl">
+          <p className="text-slate-300 text-base sm:text-lg max-w-2xl">
             High-concurrency academic portals, SaaS applications, telemetry systems, and mobile applications.
           </p>
         </motion.div>
@@ -117,12 +118,12 @@ export default function ProjectsPage() {
           transition={{ duration: 0.5 }}
           className="mb-16"
         >
-          <div className="glass-card p-8 sm:p-10 border-blue-500/50 bg-gradient-to-br from-blue-500/[0.06] via-[#121215] to-emerald-500/[0.03] relative overflow-hidden">
+          <div className="glass-card p-8 sm:p-10 border-[#2c3038] relative overflow-hidden group hover:-translate-y-1 hover:shadow-xl transition-all duration-300">
             <div className="flex flex-wrap items-center justify-between gap-4 mb-6">
               <div className="flex items-center gap-2">
                 <Star size={20} className="text-amber-400 fill-amber-400" />
-                <span className="text-xs font-mono uppercase tracking-wider text-blue-400 font-bold">
-                  Flagship Project
+                <span className="text-xs font-mono uppercase tracking-wider text-slate-300 font-bold">
+                  Flagship Platform
                 </span>
               </div>
               <div className="flex items-center gap-3">
@@ -134,9 +135,9 @@ export default function ProjectsPage() {
                     href={flagshipProject.live}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="btn-solid py-2 px-4 text-xs font-mono"
+                    className="btn-solid py-2 px-4 text-xs font-mono group/btn focus-visible:ring-2 focus-visible:ring-slate-400 focus-visible:outline-none"
                   >
-                    Live Site <ExternalLink size={14} />
+                    Live Site <ExternalLink size={14} className="group-hover/btn:translate-x-0.5 transition-transform" />
                   </a>
                 )}
               </div>
@@ -146,26 +147,26 @@ export default function ProjectsPage() {
               {flagshipProject.name}
             </h2>
 
-            <div className="inline-block px-3 py-1 rounded-full bg-blue-500/10 border border-blue-500/20 text-blue-300 text-xs font-mono mb-6">
+            <div className="inline-block px-3 py-1 rounded-full bg-white/5 border border-white/10 text-slate-200 text-xs font-mono mb-6">
               {flagshipProject.metric}
             </div>
 
-            <p className="text-zinc-300 text-base sm:text-lg leading-relaxed mb-6">
+            <p className="text-slate-300 text-base sm:text-lg leading-relaxed mb-6">
               {flagshipProject.description}
             </p>
 
             {flagshipProject.bullets && (
               <ul className="space-y-3 mb-8">
                 {flagshipProject.bullets.map((b, i) => (
-                  <li key={i} className="flex items-start gap-3 text-zinc-300 text-sm leading-relaxed">
-                    <CheckCircle2 size={16} className="text-blue-400 mt-0.5 shrink-0" />
+                  <li key={i} className="flex items-start gap-3 text-slate-300 text-sm leading-relaxed">
+                    <CheckCircle2 size={16} className="text-slate-400 mt-0.5 shrink-0" />
                     <span>{b}</span>
                   </li>
                 ))}
               </ul>
             )}
 
-            <div className="flex flex-wrap gap-2 pt-6 border-t border-zinc-800">
+            <div className="flex flex-wrap gap-2 pt-6 border-t border-[#22252a]">
               {flagshipProject.tech.map((t) => (
                 <span key={t} className="tech-pill">
                   {t}
@@ -192,13 +193,13 @@ export default function ProjectsPage() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.4, delay: i * 0.08 }}
-                className="glass-card p-6 flex flex-col justify-between"
+                className="glass-card p-6 flex flex-col justify-between group hover:-translate-y-1 hover:shadow-lg transition-all duration-300"
               >
                 <div>
                   <div className="flex items-start justify-between gap-4 mb-3">
                     <div>
                       {p.tag && (
-                        <span className="text-[10px] font-mono uppercase px-2.5 py-0.5 rounded-full bg-zinc-800 border border-zinc-700/50 text-zinc-300 mb-2 inline-block">
+                        <span className="text-[10px] font-mono uppercase px-2.5 py-0.5 rounded bg-[#1f2228] border border-[#2c3038] text-slate-300 mb-2 inline-block">
                           {p.tag}
                         </span>
                       )}
@@ -210,7 +211,7 @@ export default function ProjectsPage() {
                           href={p.live}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="text-zinc-400 hover:text-blue-400"
+                          className="text-slate-400 hover:text-white focus-visible:ring-2 focus-visible:ring-slate-400 focus-visible:outline-none"
                           title="Live site"
                         >
                           <ExternalLink size={16} />
@@ -220,20 +221,20 @@ export default function ProjectsPage() {
                   </div>
 
                   {p.metric && (
-                    <div className="inline-block px-2.5 py-0.5 rounded-full bg-blue-500/10 border border-blue-500/20 text-blue-400 text-xs font-mono mb-4">
+                    <div className="inline-block px-2.5 py-0.5 rounded-full bg-white/5 border border-white/10 text-slate-300 text-xs font-mono mb-4">
                       {p.metric}
                     </div>
                   )}
 
-                  <p className="text-xs sm:text-sm text-zinc-400 leading-relaxed mb-4">
+                  <p className="text-xs sm:text-sm text-slate-300 leading-relaxed mb-4">
                     {p.description}
                   </p>
 
                   {p.bullets && (
-                    <ul className="space-y-1.5 mb-6 text-xs text-zinc-300">
+                    <ul className="space-y-1.5 mb-6 text-xs text-slate-300">
                       {p.bullets.map((b, idx) => (
                         <li key={idx} className="flex items-start gap-2">
-                          <span className="w-1 h-1 rounded-full bg-blue-400 mt-1.5 shrink-0" />
+                          <span className="w-1 h-1 rounded-full bg-slate-400 mt-1.5 shrink-0" />
                           <span>{b}</span>
                         </li>
                       ))}
@@ -241,7 +242,7 @@ export default function ProjectsPage() {
                   )}
                 </div>
 
-                <div className="flex flex-wrap gap-2 pt-4 border-t border-zinc-800">
+                <div className="flex flex-wrap gap-2 pt-4 border-t border-[#22252a]">
                   {p.tech.map((t) => (
                     <span key={t} className="tech-pill text-[11px]">
                       {t}
@@ -254,6 +255,7 @@ export default function ProjectsPage() {
         </div>
       </main>
 
+      <PreFooter />
       <Footer />
     </div>
   );

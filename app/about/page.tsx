@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import { BookOpen, Cpu, ShieldCheck } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import PreFooter from "@/components/PreFooter";
 
 const focusChips = [
   "Full-Stack Software",
@@ -82,14 +83,14 @@ export default function AboutPage() {
                 href="https://noteboat.store"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-white font-semibold underline underline-offset-4 hover:text-slate-300"
+                className="text-white font-semibold underline underline-offset-4 hover:text-slate-300 focus-visible:ring-2 focus-visible:ring-slate-400 focus-visible:outline-none"
               >
                 Noteboat
               </a>
-              , an academic platform serving over <strong className="text-white font-semibold">12,000 active students</strong> across 50+ AKTU colleges with over 2,000 concurrent live visitors.
+              , an academic platform serving over <strong className="text-white font-semibold">1,000+ registered users</strong> and <strong className="text-white font-semibold">30,000+ total visitors</strong> across 50+ AKTU colleges.
             </p>
             <p>
-              During my project internship at <strong className="text-white font-semibold">Airtel Center (Xtelify Ltd.)</strong>, I built an enterprise AI network telemetry collector using FastAPI, Prometheus, Grafana, and gNMI streaming engines for multi-VRF BGP routing data.
+              During my project internship at <strong className="text-white font-semibold">Airtel Center (Xtelify Ltd.)</strong>, I architected an enterprise AI network telemetry collector using FastAPI, Prometheus, Grafana, and gNMI streaming engines for multi-VRF BGP routing data.
             </p>
             <p>
               I focus on writing clean, maintainable code, optimizing database performance, and building software that solves genuine user problems.
@@ -201,6 +202,7 @@ export default function AboutPage() {
         </div>
       </main>
 
+      <PreFooter />
       <Footer />
     </div>
   );
