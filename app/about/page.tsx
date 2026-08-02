@@ -77,7 +77,7 @@ export default function AboutPage() {
               I&apos;m currently pursuing my B.Tech in Computer Science and Engineering (Artificial Intelligence) at KIET Group of Institutions (2024–2028).
             </p>
             <p>
-              I co-founded{" "}
+              I founded{" "}
               <a
                 href="https://noteboat.store"
                 target="_blank"

@@ -51,7 +51,7 @@ export default function About() {
                 understanding how large systems work — from enterprise data centers to cloud-native applications.
               </p>
               <p>
-                I co-founded{" "}
+                I founded{" "}
                 <a
                   href="https://noteboat.store"
                   target="_blank"
