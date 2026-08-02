@@ -27,8 +27,8 @@ const links = [
       </svg>
     ),
     label: "LinkedIn",
-    value: "tushar-bhardwaj",
-    href: "https://linkedin.com/in/tushar-bhardwaj",
+    value: "tushar0bhrardwaj",
+    href: "https://www.linkedin.com/in/tushar0bhrardwaj/",
     external: true,
   },
   {
