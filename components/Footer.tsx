@@ -2,28 +2,40 @@
 
 export default function Footer() {
   return (
-    <footer className="border-t border-[#22252a] py-8 mt-16 bg-[#0b0c0e]">
-      <div className="max-w-7xl mx-auto px-4 sm:px-8 lg:px-12 flex flex-col sm:flex-row items-center justify-between gap-4">
-        <div className="flex items-center gap-2">
-          <span className="text-xs sm:text-sm text-slate-400">
-            © {new Date().getFullYear()} Tushar Bhardwaj. All rights reserved.
-          </span>
+    <footer className="border-t border-[#333333] bg-[#111111] py-8">
+      <div className="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-4">
+        <div className="font-bold text-lg tracking-wider text-white font-mono">
+          TUSHAR_BHARDWAJ
         </div>
-
-        <div className="flex items-center gap-6">
+        <p className="text-[#9ca3af] text-sm font-mono text-center md:text-left">
+          © {new Date().getFullYear()} Engineering Professional. Built for precision.
+        </p>
+        <div className="flex items-center space-x-6 text-sm font-mono text-[#9ca3af]">
           <a
-            href="https://noteboat.store"
+            href="https://github.com/0Tusharbhardwaj"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-xs font-mono text-slate-400 hover:text-white transition-colors"
+            className="hover:text-white transition-colors"
           >
-            noteboat.store ↗
+            GitHub
           </a>
-          <span className="text-xs font-mono text-slate-500">
-            Built with Next.js & TypeScript
-          </span>
+          <a
+            href="https://www.linkedin.com/in/tushar0bhrardwaj/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hover:text-white transition-colors"
+          >
+            LinkedIn
+          </a>
+          <a
+            href="mailto:contact@tusharbhardwaj.com"
+            className="hover:text-white transition-colors"
+          >
+            Email
+          </a>
         </div>
       </div>
     </footer>
   );
 }
+
