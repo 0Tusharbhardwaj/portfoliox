@@ -67,14 +67,14 @@ export default function AboutPage() {
               initial={{ opacity: 0, scale: 0.95 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.5, delay: 0.2 }}
-              className="relative lg:ml-auto w-full max-w-md mx-auto"
+              className="lg:col-span-5 flex justify-center lg:justify-end w-full"
             >
               <img
                 alt="Tushar Bhardwaj Portrait"
                 loading="eager"
                 width={400}
-                height={400}
-                className="w-full max-w-md mx-auto object-cover rounded-sm border border-[#333333] transition-all duration-500 shadow-xl"
+                height={500}
+                className="w-full max-w-[320px] sm:max-w-[360px] lg:max-w-[400px] h-auto object-cover object-top rounded-sm border border-[#333333] transition-all duration-500 shadow-2xl"
                 src="https://imgh.in/host/a3anmp"
               />
             </motion.div>

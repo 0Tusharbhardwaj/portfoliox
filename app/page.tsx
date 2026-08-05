@@ -90,8 +90,8 @@ export default function Home() {
                 alt="Tushar Bhardwaj Portrait"
                 loading="eager"
                 width={400}
-                height={400}
-                className="w-full max-w-[340px] sm:max-w-[380px] lg:max-w-[420px] aspect-square object-cover rounded-sm border border-[#333333] transition-all duration-500 shadow-2xl"
+                height={500}
+                className="w-full max-w-[320px] sm:max-w-[360px] lg:max-w-[400px] h-auto object-cover object-top rounded-sm border border-[#333333] transition-all duration-500 shadow-2xl"
                 src="https://imgh.in/host/a3anmp"
               />
             </motion.div>
