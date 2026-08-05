@@ -23,9 +23,9 @@ export default function Home() {
     <div className="min-h-screen flex flex-col bg-[#111111] text-[#f3f4f6]">
       <Navbar />
 
-      <main className="flex-1 pt-16 flex flex-col justify-center min-h-[calc(100vh-4rem)]">
-        {/* Hero Section */}
-        <section className="max-w-7xl w-full mx-auto px-6 py-4 lg:py-6 flex-1 flex items-center" id="hero">
+      <main className="flex-1 pt-16">
+        {/* Hero Section - Exactly 100vh viewport fit */}
+        <section className="max-w-7xl w-full mx-auto px-6 min-h-[calc(100vh-4rem)] flex items-center py-12 lg:py-16" id="hero">
           <div className="grid lg:grid-cols-12 gap-8 lg:gap-12 items-center w-full">
             <motion.div
               initial={{ opacity: 0, y: 15 }}
@@ -34,44 +34,44 @@ export default function Home() {
               className="lg:col-span-7"
             >
               {/* Availability Badge */}
-              <div className="flex items-center gap-2 text-[#FFD700] font-mono text-xs mb-3">
-                <span className="w-2 h-2 rounded-full bg-[#FFD700] animate-pulse"></span>
+              <div className="flex items-center gap-2 text-[#FFD700] font-mono text-sm mb-4">
+                <span className="w-2.5 h-2.5 rounded-full bg-[#FFD700] animate-pulse"></span>
                 AVAILABLE FOR HIRE
               </div>
 
-              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight leading-tight mb-4 text-white">
+              <h1 className="text-5xl sm:text-6xl lg:text-7xl font-extrabold tracking-tight leading-none mb-6 text-white">
                 Hi! I&apos;m Tushar <br />
                 <span className="text-[#FFD700]">Bhardwaj</span>
               </h1>
 
-              <p className="text-[#9ca3af] text-sm sm:text-base leading-relaxed mb-6 max-w-xl">
-                Software &amp; Systems Engineer. Building scalable platforms and network intelligence. Computer Science (AI) student building enterprise web platforms. Founded Noteboat (1,000+ registered users) and interned at Airtel Center building streaming telemetry collectors.
+              <p className="text-[#9ca3af] text-base sm:text-lg leading-relaxed mb-8 max-w-xl">
+                Software &amp; Systems Engineer. Building scalable platforms and network intelligence. I&apos;m a Computer Science student building scalable enterprise software and web platforms. I founded Noteboat (1,000+ registered users), interned at Airtel Center building telemetry collectors, and write production code in TypeScript, Python, and Next.js.
               </p>
 
               {/* Hero Action Links */}
-              <div className="flex flex-wrap gap-3 mb-6">
+              <div className="flex flex-wrap gap-4 mb-8">
                 <Link
                   href="/projects"
-                  className="bg-[#FFD700] text-[#0a0a0a] hover:bg-yellow-400 px-5 py-2.5 text-sm font-semibold flex items-center gap-2 transition-all rounded-sm font-mono shadow-sm"
+                  className="bg-[#FFD700] text-[#0a0a0a] hover:bg-yellow-400 px-6 py-3 font-semibold flex items-center gap-2 transition-all rounded-sm font-mono shadow-sm"
                 >
                   View Projects
-                  <ArrowRight size={16} />
+                  <ArrowRight size={18} />
                 </Link>
                 <Link
                   href="/contact"
-                  className="border border-[#333333] hover:border-[#FFD700] text-white px-5 py-2.5 text-sm font-semibold flex items-center gap-2 transition-all rounded-sm font-mono"
+                  className="border border-[#333333] hover:border-[#FFD700] text-white px-6 py-3 font-semibold flex items-center gap-2 transition-all rounded-sm font-mono"
                 >
                   Contact Me!
-                  <Lock size={16} />
+                  <Lock size={18} />
                 </Link>
               </div>
 
               {/* Key Skills Quick List */}
               <div>
-                <p className="text-[#9ca3af] font-mono text-xs mb-2">Skills :</p>
-                <div className="flex flex-wrap gap-1.5 font-mono text-[11px]">
+                <p className="text-[#9ca3af] font-mono text-xs mb-3">Skills :</p>
+                <div className="flex flex-wrap gap-2 font-mono text-xs">
                   {["TypeScript", "Python", "Next.js", "FastAPI", "Prometheus", "Grafana", "MongoDB"].map((skill) => (
-                    <span key={skill} className="bg-[#1a1a1a] border border-[#333333] px-2.5 py-1 rounded text-gray-300">
+                    <span key={skill} className="bg-[#1a1a1a] border border-[#333333] px-3 py-1.5 rounded text-gray-300">
                       {skill}
                     </span>
                   ))}
@@ -89,9 +89,9 @@ export default function Home() {
               <img
                 alt="Tushar Bhardwaj Portrait"
                 loading="eager"
-                width={340}
-                height={340}
-                className="w-full max-w-[280px] sm:max-w-[320px] lg:max-w-[340px] max-h-[380px] object-cover rounded-sm border border-[#333333] transition-all duration-500 shadow-xl"
+                width={400}
+                height={400}
+                className="w-full max-w-[340px] sm:max-w-[380px] lg:max-w-[420px] aspect-square object-cover rounded-sm border border-[#333333] transition-all duration-500 shadow-2xl"
                 src="https://imgh.in/host/a3anmp"
               />
             </motion.div>
