@@ -49,7 +49,7 @@ export default function AboutPage() {
                   className="border border-[#333333] hover:border-[#FFD700] text-white px-6 py-3 font-semibold flex items-center gap-2 transition-all rounded-sm font-mono"
                 >
                   Contact Me!
-                  <Lock size={18} />
+                  <ArrowRight size={18} />
                 </Link>
               </div>
 
@@ -132,71 +132,33 @@ export default function AboutPage() {
             <h2 className="text-3xl font-bold text-white mb-12">Production Skills &amp; Stack</h2>
 
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-              <div className="bg-[#1a1a1a] border border-[#333333] p-6 rounded-sm">
-                <h3 className="font-mono text-xs text-[#9ca3af] uppercase mb-4">Languages</h3>
-                <div className="flex flex-wrap gap-2 font-mono text-xs">
-                  {["JavaScript", "TypeScript", "Python", "C++", "SQL"].map((s) => (
-                    <span key={s} className="bg-[#0a0a0a] border border-[#333333] px-3 py-1.5 rounded text-gray-300">
-                      {s}
-                    </span>
-                  ))}
+              {[
+                { title: "Languages", items: ["JavaScript", "TypeScript", "Python", "C++", "SQL"] },
+                { title: "Frontend Stack", items: ["React", "Next.js", "Tailwind CSS"] },
+                { title: "Backend Stack", items: ["Node.js", "Express.js", "FastAPI"] },
+                { title: "Databases", items: ["MongoDB", "PostgreSQL", "Redis", "Supabase"] },
+                { title: "Networking & Telemetry", items: ["SNMPv3", "gNMI", "Prometheus", "Grafana"] },
+                { title: "Tools & DevOps", items: ["AWS", "Vercel", "Docker", "GitHub Actions"] },
+              ].map((category, idx) => (
+                <div
+                  key={idx}
+                  className="bg-[#1a1a1a] border border-[#333333] hover:border-[#FFD700] p-6 rounded-sm transition-all duration-300 transform hover:-translate-y-1.5 hover:shadow-xl hover:shadow-[#FFD700]/10 group cursor-default"
+                >
+                  <h3 className="font-mono text-xs text-[#9ca3af] uppercase mb-4 group-hover:text-[#FFD700] transition-colors">
+                    {category.title}
+                  </h3>
+                  <div className="flex flex-wrap gap-2 font-mono text-xs">
+                    {category.items.map((s) => (
+                      <span
+                        key={s}
+                        className="bg-[#0a0a0a] border border-[#333333] group-hover:border-[#FFD700]/40 px-3 py-1.5 rounded text-gray-300 group-hover:text-white transition-all duration-200"
+                      >
+                        {s}
+                      </span>
+                    ))}
+                  </div>
                 </div>
-              </div>
-
-              <div className="bg-[#1a1a1a] border border-[#333333] p-6 rounded-sm">
-                <h3 className="font-mono text-xs text-[#9ca3af] uppercase mb-4">Frontend Stack</h3>
-                <div className="flex flex-wrap gap-2 font-mono text-xs">
-                  {["React", "Next.js", "Tailwind CSS"].map((s) => (
-                    <span key={s} className="bg-[#0a0a0a] border border-[#333333] px-3 py-1.5 rounded text-gray-300">
-                      {s}
-                    </span>
-                  ))}
-                </div>
-              </div>
-
-              <div className="bg-[#1a1a1a] border border-[#333333] p-6 rounded-sm">
-                <h3 className="font-mono text-xs text-[#9ca3af] uppercase mb-4">Backend Stack</h3>
-                <div className="flex flex-wrap gap-2 font-mono text-xs">
-                  {["Node.js", "Express.js", "FastAPI"].map((s) => (
-                    <span key={s} className="bg-[#0a0a0a] border border-[#333333] px-3 py-1.5 rounded text-gray-300">
-                      {s}
-                    </span>
-                  ))}
-                </div>
-              </div>
-
-              <div className="bg-[#1a1a1a] border border-[#333333] p-6 rounded-sm">
-                <h3 className="font-mono text-xs text-[#9ca3af] uppercase mb-4">Databases</h3>
-                <div className="flex flex-wrap gap-2 font-mono text-xs">
-                  {["MongoDB", "PostgreSQL", "Redis", "Supabase"].map((s) => (
-                    <span key={s} className="bg-[#0a0a0a] border border-[#333333] px-3 py-1.5 rounded text-gray-300">
-                      {s}
-                    </span>
-                  ))}
-                </div>
-              </div>
-
-              <div className="bg-[#1a1a1a] border border-[#333333] p-6 rounded-sm">
-                <h3 className="font-mono text-xs text-[#9ca3af] uppercase mb-4">Networking &amp; Telemetry</h3>
-                <div className="flex flex-wrap gap-2 font-mono text-xs">
-                  {["SNMPv3", "gNMI", "Prometheus", "Grafana"].map((s) => (
-                    <span key={s} className="bg-[#0a0a0a] border border-[#333333] px-3 py-1.5 rounded text-gray-300">
-                      {s}
-                    </span>
-                  ))}
-                </div>
-              </div>
-
-              <div className="bg-[#1a1a1a] border border-[#333333] p-6 rounded-sm">
-                <h3 className="font-mono text-xs text-[#9ca3af] uppercase mb-4">Tools &amp; DevOps</h3>
-                <div className="flex flex-wrap gap-2 font-mono text-xs">
-                  {["AWS", "Vercel", "Docker", "GitHub Actions"].map((s) => (
-                    <span key={s} className="bg-[#0a0a0a] border border-[#333333] px-3 py-1.5 rounded text-gray-300">
-                      {s}
-                    </span>
-                  ))}
-                </div>
-              </div>
+              ))}
             </div>
           </div>
         </section>
@@ -204,17 +166,31 @@ export default function AboutPage() {
         {/* Certifications Section */}
         <section className="border-t border-[#333333] bg-[#0a0a0a] py-16">
           <div className="max-w-7xl mx-auto px-6">
-            <div className="bg-[#1a1a1a] border border-[#333333] p-6 rounded-sm flex items-center gap-4">
-              <div className="w-12 h-12 rounded bg-[#0a0a0a] border border-[#333333] flex items-center justify-center text-[#FFD700] shrink-0">
-                <ShieldCheck size={26} />
+            <a
+              href="https://aws.amazon.com/verification"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="bg-[#1a1a1a] border border-[#333333] hover:border-[#FFD700] p-6 rounded-sm flex items-center justify-between gap-4 transition-all duration-300 transform hover:-translate-y-1 hover:shadow-xl hover:shadow-[#FFD700]/10 group cursor-pointer"
+            >
+              <div className="flex items-center gap-4">
+                <div className="w-12 h-12 rounded bg-[#0a0a0a] border border-[#333333] group-hover:border-[#FFD700] flex items-center justify-center text-[#FFD700] shrink-0 transition-colors">
+                  <ShieldCheck size={26} className="group-hover:scale-110 transition-transform" />
+                </div>
+                <div>
+                  <h4 className="text-white font-bold text-lg group-hover:text-[#FFD700] transition-colors">
+                    AWS Certified Cloud Practitioner
+                  </h4>
+                  <p className="text-xs text-[#9ca3af] font-mono mt-0.5">
+                    Amazon Web Services · Verified Credential
+                  </p>
+                </div>
               </div>
-              <div>
-                <h4 className="text-white font-bold text-lg">AWS Certified Cloud Practitioner</h4>
-                <p className="text-xs text-[#9ca3af] font-mono mt-0.5">
-                  Amazon Web Services · Verified Credential
-                </p>
+
+              <div className="hidden sm:flex items-center gap-2 text-[#FFD700] font-mono text-xs group-hover:translate-x-1 transition-transform">
+                <span>Verify Credential</span>
+                <ExternalLink size={14} />
               </div>
-            </div>
+            </a>
           </div>
         </section>
       </main>

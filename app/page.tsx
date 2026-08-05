@@ -62,7 +62,7 @@ export default function Home() {
                   className="border border-[#333333] hover:border-[#FFD700] text-white px-6 py-3 font-semibold flex items-center gap-2 transition-all rounded-sm font-mono"
                 >
                   Contact Me!
-                  <Lock size={18} />
+                  <ArrowRight size={18} />
                 </Link>
               </div>
 
@@ -116,19 +116,19 @@ export default function Home() {
 
                 {/* Metrics / Highlights Grid */}
                 <div className="grid sm:grid-cols-2 gap-6">
-                  <div className="bg-[#1a1a1a] border border-[#333333] p-6 rounded-sm">
+                  <div className="bg-[#1a1a1a] border border-[#333333] hover:border-[#FFD700] p-6 rounded-sm transition-all duration-300 transform hover:-translate-y-1 hover:shadow-lg hover:shadow-[#FFD700]/10 group">
                     <div className="flex justify-between items-start mb-4">
-                      <Users className="text-[#FFD700] w-6 h-6" />
-                      <span className="text-xs font-mono text-[#9ca3af] uppercase">Users_Served</span>
+                      <Users className="text-[#FFD700] w-6 h-6 group-hover:scale-110 transition-transform" />
+                      <span className="text-xs font-mono text-[#9ca3af] uppercase group-hover:text-[#FFD700] transition-colors">Users_Served</span>
                     </div>
                     <div className="text-4xl font-bold mb-1 text-white">30k+</div>
                     <div className="text-[#9ca3af] text-sm">Total Platform Visitors</div>
                   </div>
 
-                  <div className="bg-[#1a1a1a] border border-[#333333] p-6 rounded-sm">
+                  <div className="bg-[#1a1a1a] border border-[#333333] hover:border-[#FFD700] p-6 rounded-sm transition-all duration-300 transform hover:-translate-y-1 hover:shadow-lg hover:shadow-[#FFD700]/10 group">
                     <div className="flex justify-between items-start mb-4">
-                      <Activity className="text-[#FFD700] w-6 h-6" />
-                      <span className="text-xs font-mono text-[#9ca3af] uppercase">Network_Nodes</span>
+                      <Activity className="text-[#FFD700] w-6 h-6 group-hover:scale-110 transition-transform" />
+                      <span className="text-xs font-mono text-[#9ca3af] uppercase group-hover:text-[#FFD700] transition-colors">Network_Nodes</span>
                     </div>
                     <div className="text-4xl font-bold mb-1 text-white">Enterprise</div>
                     <div className="text-[#9ca3af] text-sm">Telemetry Scale</div>

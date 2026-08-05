@@ -1,12 +1,14 @@
 "use client";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import { ExternalLink } from "lucide-react";
 
 const experiences = [
   {
     company: "Noteboat",
     role: "Founder & Lead Engineer",
     period: "Aug 2023 — PRESENT",
+    link: "https://noteboat.store",
     bullets: [
       "Founded and scaled an academic document exchange platform reaching 1,000+ registered users and 30,000+ total visitors across 50+ AKTU-affiliated colleges.",
       "Engineered database optimizations boosting query performance 5x and re-architected user management cutting initial JSON payload sizes by 80%.",
@@ -18,6 +20,7 @@ const experiences = [
     company: "Airtel Center (Xtelify Ltd.)",
     role: "Software Engineering Intern",
     period: "Jun 2024 — Jul 2024",
+    link: "https://www.airtel.in",
     bullets: [
       "Architected an enterprise AI network telemetry collector using FastAPI, React.js, Telegraf, Prometheus, and Grafana.",
       "Architected multi-VRF BGP collector service and gNMI streaming telemetry engine, streamlining device onboarding via CSV ingestion pipelines.",
@@ -29,6 +32,7 @@ const experiences = [
     company: "SuperManager AGI",
     role: "Web Development Intern",
     period: "Nov 2023 — Mar 2024",
+    link: "https://github.com/0Tusharbhardwaj",
     bullets: [
       "Developed 10+ responsive frontend modules using React and Tailwind CSS, improving mobile responsiveness scores by 25% based on Lighthouse audits.",
       "Programmed content synchronization by integrating real-time API feeds.",
@@ -75,10 +79,23 @@ export default function ExperiencePage() {
               <div className="timeline-line"></div>
               <div className="space-y-16">
                 {experiences.map((exp, idx) => (
-                  <div key={idx} className="relative">
-                    <div className="timeline-dot"></div>
+                  <div key={idx} className="relative group bg-[#1a1a1a]/40 border border-transparent hover:border-[#333333] p-6 rounded-sm transition-all duration-300">
+                    <div className="timeline-dot group-hover:scale-125 transition-transform"></div>
                     <div className="flex flex-col sm:flex-row sm:justify-between sm:items-baseline mb-2">
-                      <h3 className="text-xl font-bold text-white">{exp.role}</h3>
+                      <div className="flex items-center gap-3">
+                        <h3 className="text-xl font-bold text-white group-hover:text-[#FFD700] transition-colors">{exp.role}</h3>
+                        {exp.link && (
+                          <a
+                            href={exp.link}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="inline-flex items-center gap-1 text-[11px] font-mono text-[#FFD700] bg-[#FFD700]/10 border border-[#FFD700]/30 px-2 py-0.5 rounded hover:bg-[#FFD700] hover:text-[#0a0a0a] transition-all"
+                          >
+                            <span>Check it out</span>
+                            <ExternalLink size={10} />
+                          </a>
+                        )}
+                      </div>
                       <span className="text-[#FFD700] font-mono text-sm mt-1 sm:mt-0">{exp.period}</span>
                     </div>
                     <div className="text-[#9ca3af] font-mono text-xs mb-4 uppercase tracking-wider">
