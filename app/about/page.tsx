@@ -167,9 +167,15 @@ export default function AboutPage() {
         <section className="border-t border-[#333333] bg-[#0a0a0a] py-16">
           <div className="max-w-7xl mx-auto px-6">
             <a
-              href="https://aws.amazon.com/verification?id=afcc8c09a1cd4ebbbc7e75e04c69fec4"
+              href="https://cp.certmetrics.com/amazon/en/public/verify/credential"
               target="_blank"
               rel="noopener noreferrer"
+              onClick={() => {
+                if (typeof navigator !== "undefined" && navigator.clipboard) {
+                  navigator.clipboard.writeText("afcc8c09a1cd4ebbbc7e75e04c69fec4");
+                }
+              }}
+              title="Click to copy Credential Code & open AWS Verification portal"
               className="bg-[#1a1a1a] border border-[#333333] hover:border-[#FFD700] p-6 rounded-sm flex items-center justify-between gap-4 transition-all duration-300 transform hover:-translate-y-1 hover:shadow-xl hover:shadow-[#FFD700]/10 group cursor-pointer"
             >
               <div className="flex items-center gap-4">
@@ -180,14 +186,16 @@ export default function AboutPage() {
                   <h4 className="text-white font-bold text-lg group-hover:text-[#FFD700] transition-colors">
                     AWS Certified Cloud Practitioner
                   </h4>
-                  <p className="text-xs text-[#9ca3af] font-mono mt-0.5">
-                    Amazon Web Services · Credential ID: <span className="text-gray-300">afcc8c09a1cd4ebbbc7e75e04c69fec4</span>
+                  <p className="text-xs text-[#9ca3af] font-mono mt-0.5 flex flex-wrap items-center gap-2">
+                    <span>Amazon Web Services</span>
+                    <span>·</span>
+                    <span>Code: <code className="text-[#FFD700] bg-[#0a0a0a] px-1.5 py-0.5 rounded border border-[#333333]">afcc8c09a1cd4ebbbc7e75e04c69fec4</code></span>
                   </p>
                 </div>
               </div>
 
-              <div className="hidden sm:flex items-center gap-2 text-[#FFD700] font-mono text-xs group-hover:translate-x-1 transition-transform">
-                <span>Verify Credential</span>
+              <div className="hidden sm:flex items-center gap-2 text-[#FFD700] font-mono text-xs group-hover:translate-x-1 transition-transform bg-[#FFD700]/10 border border-[#FFD700]/30 px-3 py-1.5 rounded">
+                <span>Copy Code &amp; Verify</span>
                 <ExternalLink size={14} />
               </div>
             </a>
