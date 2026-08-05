@@ -91,7 +91,7 @@ export default function Home() {
                 loading="eager"
                 width={400}
                 height={400}
-                className="relative z-10 w-full max-w-md mx-auto object-cover rounded-sm border border-[#333333] grayscale hover:grayscale-0 transition-all duration-500"
+                className="relative z-10 w-full max-w-md mx-auto object-cover rounded-sm border border-[#333333] transition-all duration-500"
                 src="https://imgh.in/host/a3anmp"
               />
             </motion.div>
