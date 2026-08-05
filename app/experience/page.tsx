@@ -32,7 +32,7 @@ const experiences = [
     company: "SuperManager AGI",
     role: "Web Development Intern",
     period: "Nov 2023 — Mar 2024",
-    link: "https://github.com/0Tusharbhardwaj",
+    link: "https://www.supermanager.co/",
     bullets: [
       "Developed 10+ responsive frontend modules using React and Tailwind CSS, improving mobile responsiveness scores by 25% based on Lighthouse audits.",
       "Programmed content synchronization by integrating real-time API feeds.",

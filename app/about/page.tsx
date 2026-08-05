@@ -167,7 +167,7 @@ export default function AboutPage() {
         <section className="border-t border-[#333333] bg-[#0a0a0a] py-16">
           <div className="max-w-7xl mx-auto px-6">
             <a
-              href="https://aws.amazon.com/verification"
+              href="https://aws.amazon.com/verification?id=afcc8c09a1cd4ebbbc7e75e04c69fec4"
               target="_blank"
               rel="noopener noreferrer"
               className="bg-[#1a1a1a] border border-[#333333] hover:border-[#FFD700] p-6 rounded-sm flex items-center justify-between gap-4 transition-all duration-300 transform hover:-translate-y-1 hover:shadow-xl hover:shadow-[#FFD700]/10 group cursor-pointer"
@@ -181,7 +181,7 @@ export default function AboutPage() {
                     AWS Certified Cloud Practitioner
                   </h4>
                   <p className="text-xs text-[#9ca3af] font-mono mt-0.5">
-                    Amazon Web Services · Verified Credential
+                    Amazon Web Services · Credential ID: <span className="text-gray-300">afcc8c09a1cd4ebbbc7e75e04c69fec4</span>
                   </p>
                 </div>
               </div>
