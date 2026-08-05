@@ -8,7 +8,7 @@ export default function Footer() {
           TUSHAR_BHARDWAJ
         </div>
         <p className="text-[#9ca3af] text-sm font-mono text-center md:text-left">
-          © {new Date().getFullYear()} Engineering Professional. Built for precision.
+          © {new Date().getFullYear()} Tushar Bhardwaj. Built for precision.
         </p>
         <div className="flex items-center space-x-6 text-sm font-mono text-[#9ca3af]">
           <a
@@ -28,7 +28,7 @@ export default function Footer() {
             LinkedIn
           </a>
           <a
-            href="mailto:contact@tusharbhardwaj.com"
+            href="mailto:tbhardwaj.dev@gmail.com"
             className="hover:text-white transition-colors"
           >
             Email

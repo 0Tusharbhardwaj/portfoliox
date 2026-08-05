@@ -62,20 +62,19 @@ export default function AboutPage() {
               </div>
             </motion.div>
 
-            {/* Profile Image with Yellow Shadow Frame */}
+            {/* Profile Image Container */}
             <motion.div
               initial={{ opacity: 0, scale: 0.95 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.5, delay: 0.2 }}
               className="relative lg:ml-auto w-full max-w-md mx-auto"
             >
-              <div className="absolute inset-0 bg-[#FFD700] transform translate-x-4 translate-y-4 rounded-sm"></div>
               <img
                 alt="Tushar Bhardwaj Portrait"
                 loading="eager"
                 width={400}
                 height={400}
-                className="relative z-10 w-full max-w-md mx-auto object-cover rounded-sm border border-[#333333] transition-all duration-500"
+                className="w-full max-w-md mx-auto object-cover rounded-sm border border-[#333333] transition-all duration-500 shadow-xl"
                 src="https://imgh.in/host/a3anmp"
               />
             </motion.div>

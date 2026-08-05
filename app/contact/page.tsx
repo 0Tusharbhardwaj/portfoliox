@@ -32,13 +32,17 @@ export default function ContactPage() {
                   Currently open for new engineering challenges. Whether you have a question or just want to say hi, my inbox is open.
                 </p>
 
-                <a
-                  href="mailto:contact@tusharbhardwaj.com"
-                  className="bg-[#FFD700] text-[#0a0a0a] hover:bg-yellow-400 px-8 py-3 font-semibold flex items-center justify-center gap-2 transition-all rounded-sm font-mono inline-flex shadow-sm"
+                <button
+                  onClick={() => {
+                    navigator.clipboard.writeText("tbhardwaj.dev@gmail.com");
+                    window.location.href = "mailto:tbhardwaj.dev@gmail.com";
+                  }}
+                  type="button"
+                  className="bg-[#FFD700] text-[#0a0a0a] hover:bg-yellow-400 px-8 py-3 font-semibold flex items-center justify-center gap-2 transition-all rounded-sm font-mono inline-flex shadow-sm cursor-pointer active:scale-95"
                 >
                   Transmit Message
                   <Send size={18} />
-                </a>
+                </button>
 
                 <div className="mt-12 flex items-center justify-center gap-6 text-[#9ca3af] font-mono text-sm w-full">
                   <div className="flex items-center gap-4 w-full max-w-xs">
